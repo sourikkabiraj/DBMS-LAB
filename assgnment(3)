@@ -24,7 +24,7 @@ select to_char(sysdate,'DD-MM-YYYY') from dual;
 
 Create EMP table:
 
-create table EMP_tama(EMPNO Number(5) Primary Key,
+create table EMP_sourik(EMPNO Number(5) Primary Key,
 check(EMPNO>=7000 and EMPNO<=8000),
 ENAME Varchar2(10),
 JOB Varchar2(10),
@@ -39,53 +39,53 @@ DEPT_NAME Varchar2(10));
 
 INSERTION:
 
-insert into EMP_tama values(7001,'Avi','Manager',Null,'03-Jun-10',90000,0,'Database');
+insert into EMP_sourik values(7001,'Avi','Manager',Null,'03-Jun-10',90000,0,'Database');
 
-insert into EMP_tama values(7002,'Avik','Manager',Null,'03-Jan-11',80000,0,'HR');
+insert into EMP_sourik values(7002,'Avik','Manager',Null,'03-Jan-11',80000,0,'HR');
 
-insert into EMP_tama values(7003,'Avishek','Manager',Null,'09-Jul-11',90000,0,'CRM');
+insert into EMP_sourik values(7003,'Avishek','Manager',Null,'09-Jul-11',90000,0,'CRM');
 
-insert into EMP_tama values(7004,'Raj','Manager',Null,'28-Jun-10',50000,0,'ERP');
+insert into EMP_sourik values(7004,'Raj','Manager',Null,'28-Jun-10',50000,0,'ERP');
 
-insert into EMP_tama values(7005,'Anki','DBA',7001,'03-Jun-12',70000,0,'Database');
+insert into EMP_sourik values(7005,'Anki','DBA',7001,'03-Jun-12',70000,0,'Database');
 
-insert into EMP_tama values(7006,'Sonal','Worker',7002,'30-Sep-13',10000,0,'HR');
+insert into EMP_sourik values(7006,'Sonal','Worker',7002,'30-Sep-13',10000,0,'HR');
 
-insert into EMP_tama values(7007,'Anish','Salesman',7002,'20-Dec-14',50000,500,'HR');
+insert into EMP_sourik values(7007,'Anish','Salesman',7002,'20-Dec-14',50000,500,'HR');
 
-insert into EMP_tama values(7008,'Anup','Salesman',7003,'03-Jun-15',9000,900,'CRM');
+insert into EMP_sourik values(7008,'Anup','Salesman',7003,'03-Jun-15',9000,900,'CRM');
 
-insert into EMP_tama values(7009,'Emily','Worker',7004,'30-Jun-14',8000,0,'ERP');
+insert into EMP_sourik values(7009,'Emily','Worker',7004,'30-Jun-14',8000,0,'ERP');
 
-insert into EMP_tama values(7010,'Romi','Salesman',7004,'01-Jan-80',7000,700,'ERP');
+insert into EMP_sourik values(7010,'Romi','Salesman',7004,'01-Jan-80',7000,700,'ERP');
 
 
 
 QUERIES:
 
-select ename from EMP_tama where ename like '_i%';
+select ename from EMP_sourik where ename like '_i%';
 
-select ENAME from EMP_tama where JOB <> 'Manager';
+select ENAME from EMP_sourik where JOB <> 'Manager';
 
-select count(EMPNO) from EMP_tama where JOB like 'Manager';
+select count(EMPNO) from EMP_sourik where JOB like 'Manager';
 
-select max(SAL) as "MAXIMUM",min(SAL) as "MINIMUM",sum(SAL) as "TOTAL",avg(SAL) as "AVERAGE" from EMP_tama;
+select max(SAL) as "MAXIMUM",min(SAL) as "MINIMUM",sum(SAL) as "TOTAL",avg(SAL) as "AVERAGE" from EMP_sourik;
 
-select JOB,max(SAL) as "MAXIMUM",min(SAL) as "MINIMUM",sum(SAL) as "TOTAL",avg(SAL) as "AVERAGE" from EMP_tama group by JOB;
+select JOB,max(SAL) as "MAXIMUM",min(SAL) as "MINIMUM",sum(SAL) as "TOTAL",avg(SAL) as "AVERAGE" from EMP_sourik group by JOB;
 
-select count(EMPNO) as "Number of Managers" from EMP_tama where JOB like 'Manager';
+select count(EMPNO) as "Number of Managers" from EMP_sourik where JOB like 'Manager';
 
-select ename from EMP_tama where HIREDATE='01-Jan-1980';
+select ename from EMP_sourik where HIREDATE='01-Jan-1980';
 
- select ename from EMP_tama where SAL=(select max(SAL) from EMP_tama where JOB like 'Salesman';
+ select ename from EMP_sourik where SAL=(select max(SAL) from EMP_sourik where JOB like 'Salesman';
 
- select ename from EMP_tama where SAL=(select min(SAL) from EMP_tama where JOB like 'Salesman';
+ select ename from EMP_sourik where SAL=(select min(SAL) from EMP_sourik where JOB like 'Salesman';
 
-select ename from EMP_tama where SAL>(select SAL from EMP_tama where ename like 'Turner');
+select ename from EMP_sourik where SAL>(select SAL from EMP_sourik where ename like 'Turner');
 
-select dept_name from EMP_tama where ENAME like 'FORD';
+select dept_name from EMP_sourik where ENAME like 'FORD';
 
-select dept_name from EMP_tama where SAL=(select max(SAL) from EMP_tama);
+select dept_name from EMP_sourik where SAL=(select max(SAL) from EMP_sourik);
 
 
 
